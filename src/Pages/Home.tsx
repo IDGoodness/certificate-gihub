@@ -3,27 +3,62 @@ import { useNavigate } from "react-router-dom"
 import { useLoadingStore } from '../zustand/useLoadingStore'
 import logo from '../assets/gihub.png'
 import './Home.css'
+import emailjs from '@emailjs/browser';
 
 
 
 const Home = () => {
     const navigate = useNavigate()
-    const { isLoading, setLoading } = useLoadingStore()
+    const { isLoading, setLoading } = useLoadingStore();
     const [name, setName] = React.useState("");
+    const [showFeedback, setShowFeedback] = React.useState(false);
+    const [feedback, setFeedback] = React.useState({
+        email: "",
+        message: "",
+    });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
         localStorage.setItem("name", e.target.value);
     };
 
+    
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-            navigate('/certone', { state: { fromHome: true } })
+            setShowFeedback(true); // Show feedback form before navigating
         }, 3300);
     }
+    
+    const handleFeedbackChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFeedback({
+            ...feedback, [e.target.name]: e.target.value
+        })
+    }
+
+    const handleFeedbackSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        // Send feedback via EmailJS
+        emailjs.send(
+            'service_8g4i7pj',
+            'template_t4m2l8u',
+            {
+                from_name: name,
+                email_id: feedback.email,
+                message: feedback.message,
+            },
+            'SwvzBam1DXaKItXKm'
+        ).then(() => {
+            setShowFeedback(false)
+            alert('Feedback sent successfully! Thank you for your feedback.')
+            navigate('/certone', { state: { fromHome: true, name } })
+        }).catch((err) => {
+            alert('Failed to send feedback: ' + err)
+        })
+    }
+
 
     return (
         <>
@@ -37,6 +72,43 @@ const Home = () => {
                         <div className="flex justify-center items-center py-5">
                             <div className="loader"></div>
                         </div>
+                    ) : showFeedback ? (
+                        <form id="feedbackForm" className="p-5" onSubmit={handleFeedbackSubmit}>
+                            <div className="">
+                                <h3 className="text-sm sm:text-xs text-center italic">
+                                    We value your feedback! Please provide your email address and message.
+                                </h3>
+                                <div className="py-2">
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={feedback.email}
+                                        onChange={handleFeedbackChange}
+                                        placeholder="Your Email"
+                                        className="border border-gray-300 w-full rounded-xl p-3 pl-5 focus:outline-none focus:border-orange-600 focus:ring-orange-600 "
+                                        required
+                                    />
+                                </div>
+                                <div className="py-2">
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        value={feedback.message}
+                                        onChange={handleFeedbackChange}
+                                        placeholder="Your Feedback - How was the class?"
+                                        className="border border-gray-300 w-full rounded-xl p-3 pl-5 focus:outline-none focus:border-orange-600 focus:ring-orange-600 "
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <button
+                                type="submit"
+                                className="bg-orange-500 text-white p-3 my-1 rounded-xl w-full hover:bg-orange-600"
+                            >
+                                Submit Feedback
+                            </button>
+                        </form>
                     ) : (
                         <form id="certificateForm" className="p-5" onSubmit={handleSubmit}>
                             <div className="">
@@ -47,7 +119,7 @@ const Home = () => {
                                     <input
                                         type="text"
                                         id="name"
-                                        value= {name}
+                                        value={name}
                                         name="name"
                                         onChange={handleInputChange}
                                         placeholder="Name"
@@ -57,7 +129,6 @@ const Home = () => {
                             </div>
                             <button
                                 type="submit"
-                                // onClick={handleSubmit}
                                 disabled={!name}
                                 className="bg-orange-500 text-white p-3 my-1 rounded-xl w-full hover:bg-orange-600"
                             >
