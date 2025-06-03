@@ -1,62 +1,64 @@
-import { Navigate, useLocation } from "react-router-dom"
-import { useRef, useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useRef, useCallback } from "react";
+// import React from 'react'
+import award from "../assets/award.png";
+import barcode from "../assets/barcode.png";
+import logo from "../assets/ginsti.png";
+import gihub from "../assets/gihub.png";
+import nig from "../assets/nig.png";
+import sign1 from "../assets/sign1.png";
+import sign2 from "../assets/sign2.png";
+import usa from "../assets/usa.png";
 import { toPng } from "html-to-image";
-import award from "../../assets/award.png";
-import barcode from "../../assets/barcode.png";
-import logo from "../../assets/ginsti.png";
-import gihub from "../../assets/gihub.png";
-import nig from "../../assets/nig.png";
-import sign1 from "../../assets/sign1.png";
-import sign2 from "../../assets/sign2.png";
-import usa from "../../assets/usa.png";
 
 
 
+const BioCoding_Cert = () => {
+    
+  const [formData, setFormData] = useState({
+    name: "",
+    // startMonth: "",
+    // endMonth: "",
+    course: "",
+  });
 
-const CertificateOne = () => {
-    const [formData, setFormData] = useState({
-      name: "",
-      course: "",
+  useEffect(() => {
+    // Load form data from localStorage
+    const storedName = localStorage.getItem("name");
+    // const storedStartMonth = localStorage.getItem("startMonth");
+    // const storedEndMonth = localStorage.getItem("endMonth");
+    const storedCourse = localStorage.getItem("course");
+
+    setFormData({
+      name: storedName || "",
+      // startMonth: storedStartMonth || "",
+      // endMonth: storedEndMonth || "",
+      course: storedCourse || "",
     });
-  
-    useEffect(() => {
-      const storedName = localStorage.getItem("name");
-      const storedCourse = localStorage.getItem("course");
-  
-      setFormData({
-        name: storedName || "",
-        course: storedCourse || "",
-      });
-    }, []);
-  
-    const ref = useRef(null);
-  
-    const onButtonClick = useCallback(() => {
-      if (ref.current === null) {
-        return;
-      }
-  
-      toPng(ref.current, { cacheBust: true })
-        .then((dataUrl) => {
-          const link = document.createElement("a");
-          link.download = "my-certificate.png";
-          link.href = dataUrl;
-          link.click();
-        })
-        .catch(() => {
-          alert(
-            "An error occurred while generating your certificate. Please try again."
-          );
-        });
-    }, [ref]);
+  }, []);
 
-    const location = useLocation()
-    if (!location.state?.fromHome) {
-        return <Navigate to="/" replace />
+  const ref = useRef(null);
+
+  const onButtonClick = useCallback(() => {
+    if (ref.current === null) {
+      return;
     }
 
+    toPng(ref.current, { cacheBust: true })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "my-certificate.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch(() => {
+        alert(
+          "An error occurred while generating your certificate. Please try again."
+        );
+      });
+  }, [ref]);
     
-  return (
+    
+return (
     <>
       <div className="min-w-[1000px] flex justify-center items-center min-h-screen">
             <div
@@ -141,7 +143,7 @@ const CertificateOne = () => {
                   For Successfully Participating in the International Virtual Bio-Coding workshop on mastering python and r for basic to advance genomics and Bioinformatics with NGS research applications organized by Genomac Institute Inc.
                 </p>
 
-                <p className="font-bold mx-auto text-center w-[300px] uppercase border-1 border-black ">
+                <p className="font-bold mx-auto text-center w-[300px] uppercase border border-1 border-black ">
                   27th january - 6th march 2025
                 </p>
 
@@ -199,11 +201,8 @@ const CertificateOne = () => {
             Download Certificate
             </button>
       </div>
-    
-    
-    
     </>
   )
 }
 
-export default CertificateOne
+export default BioCoding_Cert

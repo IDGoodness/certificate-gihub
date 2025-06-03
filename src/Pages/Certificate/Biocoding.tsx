@@ -13,10 +13,10 @@ import usa from "../../assets/usa.png";
 
 
 
-const CertificateOne = () => {
+const Biocoding = () => {
     const [formData, setFormData] = useState({
-      name: "",
-      course: "",
+        name: "",
+        course: "",
     });
   
     useEffect(() => {
@@ -206,4 +206,4 @@ const CertificateOne = () => {
   )
 }
 
-export default CertificateOne
+export default Biocoding
