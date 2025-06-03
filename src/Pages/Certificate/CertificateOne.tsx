@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from "react-router-dom"
+// import { Navigate, useLocation } from "react-router-dom"
 import { useRef, useEffect, useState, useCallback } from "react"
 import { toPng } from "html-to-image";
 import award from "../../assets/award.png";
@@ -50,10 +50,10 @@ const CertificateOne = () => {
         });
     }, [ref]);
 
-    const location = useLocation()
-    if (!location.state?.fromHome) {
-        return <Navigate to="/" replace />
-    }
+    // const location = useLocation()
+    // if (!location.state?.fromHome) {
+    //     return <Navigate to="/" replace />
+    // }
 
     
   return (
