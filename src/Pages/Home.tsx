@@ -89,7 +89,7 @@ const Home = () => {
                         </button>
                     </div>
                 ) : (
-                    <form id="certificateForm" className="p-5" onSubmit={handleSubmit}>
+                    <form id="certificateForm" className="p-5" onSubmit={handleSubmit} autoComplete="true" >
                         <div className="">
                             <h3 className="text-sm sm:text-xs text-center italic">
                                 Enter your name below <br /> to generate your certificate.
