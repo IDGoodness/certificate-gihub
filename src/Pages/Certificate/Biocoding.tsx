@@ -142,39 +142,49 @@ const Biocoding = () => {
                             27th june 2025
                             </p>
 
-                            <section className="relative z-10 flex justify-between -mt-5 " >
-                                <div className="w-[200px] " >
-                                    <img src={barcode} alt="Barcode" className="w-20" />
+                            <div className="flex justify-between -mt-7 relative z-10  ">
+
+                                <div className="w-[200px] -ml-[50px] -mr-[300px] mt-[70px] " >
+                                    <img src={barcode} alt="" className="w-20" />
                                 </div>
-                                <div className="w-[200px] " >
-                                    {/* w-[200px] h-[150px] pt-10 */}
-                                    <p className="border-b-2 border-purple-900  " >
-                                        <img src={sign1} alt="" className="-mb-10" />
+
+                                <div className=" ">
+                                    <p className="border-b-2 border-purple-800 w-[200px] ">
+                                    <img
+                                        src={sign1}
+                                        alt="signature"
+                                        className="w-[200px] h-[150px] -mb-10 "
+                                    />
                                     </p>
                                     <p className="text-base font-semibold">
-                                        Oluwaseyi Abraham Olawale
+                                    Oluwaseyi Abraham Olawale
                                     </p>
                                     <p className="text-xs font-medium">
-                                        Founder & CEO of Genomac Holdings.
+                                    Founder & CEO of Genomac Holdings.
                                     </p>
                                 </div>
-                                {/* w-[400px] h-auto -mt-[30px] -ml-[400px] -mr-[320px] */}
-                                <div className="w-[400px] h-auto -ml-[400px]  ">
-                                    <img src={award} alt="award" className="w-[500px] " />
+
+                                <div className="w-[400px] h-auto -mt-[30px] -ml-[400px] -mr-[320px]">
+                                    <img src={award} alt="award" />
                                 </div>
-                                <div className="w-[200px] ">
-                                    {/* w-[200px] h-[150px] pt-24 pl-10 */}
-                                    <p className="border-b-2 border-purple-900  " >
-                                        <img src={sign2} alt="" className="w-[100px] h-[50px]  " />
+
+                                <div className="mt-8 ">
+                                    <p className="border-b-2 border-purple-800 w-52 ">
+                                    <img
+                                        src={sign2}
+                                        alt="signature"
+                                        className="w-[150px] h-[100px] -mb-5 "
+                                    />
                                     </p>
-                                    <p className="text-base font-semibold">
-                                        Abraham Adeyemi Aderinto
+                                    <p className="text-base font-semibold ">
+                                    Adeyemi Aderinto
                                     </p>
-                                    <p className="text-xs text-center font-medium">
-                                        Director, G-iHub.
+                                    <p className="text-xs font-medium">
+                                    Director, G-iHub.
                                     </p>
                                 </div>
-                        </section>
+
+                            </div>
                         </div>
                     </div>
                 </div>
