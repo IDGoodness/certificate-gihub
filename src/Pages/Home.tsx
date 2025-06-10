@@ -82,7 +82,7 @@ const Home = () => {
                             className="bg-orange-500 text-white p-3 my-3 rounded-xl w-full hover:bg-orange-600"
                             onClick={() => {
                                 setShowFeedback(false)
-                                navigate('/certone', { state: { fromHome: true, name } })
+                                navigate('/biocoding', { state: { fromHome: true, name } })
                             }}
                         >
                             Continue to Certificate
