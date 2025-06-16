@@ -1,7 +1,7 @@
 // import { Navigate, useLocation } from "react-router-dom"
 import { useRef, useEffect, useState, useCallback } from "react"
 import { toPng } from "html-to-image";
-import award from "../../assets/award.png";
+import award from "../../assets/award-simple.png";
 // import barcode from "../../assets/barcode.png";
 import logo from "../../assets/gihub-full.png";
 import sign1 from "../../assets/sign1.png";
@@ -78,14 +78,37 @@ const CertificateOne = () => {
                             </p>
                         </div>
 
-                        <div className="text-center mt-20" >
-                            <p className="text-4xl font-bold border-b-2 border-orange-500 pb-2 mx-40 " >
+                        <div className="text-center mt-20 mx-40" >
+                            <p className="text-4xl font-bold border-b-2 border-orange-500 pb-2 " >
                                 {formData.name}
                             </p>
-                            <p>
-                                
+                            <p className="text-xl mt-3 " >
+                                for successfully participating in the Basic Web Development class and demonstrating commitment to learning foundational web technologies organised by Genomac Innovation Hub 
+                            </p>
+                            <p className="text-xl font-bold " >
+                                27th June 2025
                             </p>
                         </div>
+                        
+                        <section className="flex justify-between mx-10 text-center" >
+                            <div>
+                                <p className="border-b-2 border-orange-500  " >
+                                    <img src={sign1} alt="Signature 1" className="w-40" />
+                                </p>
+                                <p>Oluwaseyi Abraham Olawale</p>
+                                <p>Founder & CEO, Genomac Holdings</p>
+                            </div>
+                            <div className="mt-5" >
+                                <img src={award} alt="Award" className="w-20" />
+                            </div>
+                            <div>
+                                <p className="border-b-2 border-orange-500  " >
+                                    <img src={sign2} alt="Signature 2" className="w-32" />
+                                </p>
+                                <p>Abraham Oluwaseun Aderinto</p>
+                                <p>Director, G-iHub</p>
+                            </div>
+                        </section>
                         
                     </div>
                 </div>
