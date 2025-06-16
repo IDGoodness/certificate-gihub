@@ -6,8 +6,8 @@ import award from "../../assets/award-simple.png";
 import logo from "../../assets/gihub-full.png";
 import sign1 from "../../assets/sign1.png";
 import sign2 from "../../assets/sign2.png";
-import drop from "../../assets/drop.png";
-import watermark from "../../assets/watermark.jpg";
+import angle1 from "../../assets/angle1.jpg";
+import angle2 from "../../assets/angle2.jpg";
 
 
 
@@ -64,11 +64,11 @@ const CertificateOne = () => {
                     className="flex flex-col justify-center items-center bg-white relative"
                 >
                     <div className="relative w-[1000px] h-[600px] flex flex-col z-10 border border-red-600 ">
-                        <div className="p-5" >
+                        <div className="p-5 z-10" >
                             <img src={logo} alt="Logo" className="w-24" />
                         </div>
 
-                        <div>
+                        <div className="z-10" >
                             <p className="text-center text-5xl text-orange-500 uppercase -mt-5 italic " >
                                 Certificate of Participation
                             </p>
@@ -78,7 +78,7 @@ const CertificateOne = () => {
                             </p>
                         </div>
 
-                        <div className="text-center mt-20 mx-40" >
+                        <div className="text-center mt-20 mx-40 z-10" >
                             <p className="text-4xl font-bold border-b-2 border-orange-500 pb-2 " >
                                 {formData.name}
                             </p>
@@ -90,23 +90,30 @@ const CertificateOne = () => {
                             </p>
                         </div>
                         
-                        <section className="flex justify-between mx-10 text-center" >
-                            <div>
-                                <p className="border-b-2 border-orange-500  " >
-                                    <img src={sign1} alt="Signature 1" className="w-40" />
+                        <div className="absolute top-0 right-0 z-0" >
+                            <img src={angle2} alt="Angle 2" className="w-[600px] " />
+                        </div>
+                        <div className="absolute bottom-0 left-0 z-0" >
+                            <img src={angle1} alt="Angle 1" className="w-[400px] " />
+                        </div>
+                        
+                        <section className="flex justify-between mx-12 text-center z-10" >
+                            <div className="mt-3" >
+                                <p className="border-b-2 border-orange-500 " >
+                                    <img src={sign1} alt="Signature 1" className="w-40 ml-10 -mb-5" />
                                 </p>
-                                <p>Oluwaseyi Abraham Olawale</p>
-                                <p>Founder & CEO, Genomac Holdings</p>
+                                <p className="text-lg font-bold" >Oluwaseyi Abraham Olawale</p>
+                                <p className="text-sm" >Founder & CEO, Genomac Holdings</p>
                             </div>
-                            <div className="mt-5" >
+                            <div className="mt-10" >
                                 <img src={award} alt="Award" className="w-20" />
                             </div>
-                            <div>
-                                <p className="border-b-2 border-orange-500  " >
+                            <div className="text-center mt-10 " >
+                                <p className="border-b-2 border-orange-500 pl-7 " >
                                     <img src={sign2} alt="Signature 2" className="w-32" />
                                 </p>
-                                <p>Abraham Oluwaseun Aderinto</p>
-                                <p>Director, G-iHub</p>
+                                <p className="text-lg font-bold" >Abraham Oluwaseun Aderinto</p>
+                                <p className="text-sm" >Director, G-iHub</p>
                             </div>
                         </section>
                         
@@ -114,7 +121,7 @@ const CertificateOne = () => {
                 </div>
         </div>
 
-        <div className='flex justify-center mt-9' >
+        <div className='flex justify-center -mt-5' >
                 <button className='bg-orange-400 p-2 rounded-xl hover:bg-orange-500 text-white' onClick={onButtonClick} >
                 Download Certificate
                 </button>
