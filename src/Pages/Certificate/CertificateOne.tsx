@@ -61,15 +61,15 @@ const CertificateOne = () => {
         <div className="min-w-[1000px] flex justify-center items-center min-h-screen">
                 <div
                     ref={ref}
-                    className="flex flex-col justify-center items-center bg-white relative"
+                    className="flex flex-col justify-center items-center relative z-10 "
                 >
-                    <div className="relative w-[1000px] h-[600px] flex flex-col z-10 border border-red-600 ">
+                    <div className="relative w-[1000px] h-[600px] flex flex-col z-10 border border-gray-100 shadow-xl ">
                         <div className="p-5 z-10" >
                             <img src={logo} alt="Logo" className="w-24" />
                         </div>
 
                         <div className="z-10" >
-                            <p className="text-center text-5xl text-orange-500 uppercase -mt-5 italic " >
+                            <p className="text-center text-5xl text-orange-500 uppercase -mt-5 italic font-semibold " >
                                 Certificate of Participation
                             </p>
 
@@ -90,10 +90,10 @@ const CertificateOne = () => {
                             </p>
                         </div>
                         
-                        <div className="absolute top-0 right-0 z-0" >
+                        <div className="absolute top-0 right-0 z-0 opacity-80" >
                             <img src={angle2} alt="Angle 2" className="w-[600px] " />
                         </div>
-                        <div className="absolute bottom-0 left-0 z-0" >
+                        <div className="absolute bottom-0 left-0 z-0 opacity-80" >
                             <img src={angle1} alt="Angle 1" className="w-[400px] " />
                         </div>
                         
@@ -122,7 +122,7 @@ const CertificateOne = () => {
         </div>
 
         <div className='flex justify-center -mt-5' >
-                <button className='bg-orange-400 p-2 rounded-xl hover:bg-orange-500 text-white' onClick={onButtonClick} >
+                <button className='bg-orange-400 p-2 shadow-xl rounded-xl hover:bg-orange-500 text-white' onClick={onButtonClick} >
                 Download Certificate
                 </button>
         </div>
