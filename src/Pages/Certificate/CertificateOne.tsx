@@ -61,7 +61,7 @@ const CertificateOne = () => {
         <div className="min-w-[1000px] flex justify-center items-center min-h-screen">
                 <div
                     ref={ref}
-                    className="flex flex-col justify-center items-center relative z-10 "
+                    className="flex flex-col justify-center items-center bg-white relative z-10 "
                 >
                     <div className="relative w-[1000px] h-[600px] flex flex-col z-10 border border-gray-100 shadow-xl ">
                         <div className="p-5 z-10" >
