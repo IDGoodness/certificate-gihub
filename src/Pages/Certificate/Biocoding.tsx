@@ -143,9 +143,9 @@ const Biocoding = () => {
                             27th june 2025
                             </p>
 
-                            <div className="flex justify-between relative z-10  ">
+                            <div className="flex justify-between relative z-10 mx-3  ">
 
-                                <div className="w-[200px] -ml-[50px] -mr-[300px] mt-[70px] " >
+                                <div className="w-[200px] -ml-[20px] -mr-[350px] mt-[70px] " >
                                     <img src={barcode} alt="" className="w-20" />
                                 </div>
 
