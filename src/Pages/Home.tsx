@@ -11,7 +11,7 @@ const Home = () => {
     const navigate = useNavigate()
     const { isLoading, setLoading } = useLoadingStore();
     const [name, setName] = React.useState("");
-    const [showFeedback, setShowFeedback] = React.useState(false);
+    // const [showFeedback, setShowFeedback] = React.useState(false);
     // const [feedback, setFeedback] = React.useState({
     //     email: "",
     //     message: "",
@@ -28,7 +28,7 @@ const Home = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-            setShowFeedback(true); // Show feedback form before navigating
+            // setShowFeedback(true); // Show feedback form before navigating
         }, 3300);
     }
     
@@ -72,22 +72,19 @@ const Home = () => {
                         <div className="flex justify-center items-center py-5">
                             <div className="loader"></div>
                         </div>
-                    ) : showFeedback ? (
-                        <div className="p-5">
-                            <h3 className="text-sm sm:text-xs text-center italic mb-2">
-                                We value your feedback! Please fill the form below.
-                            </h3>
-                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1cob6dB56WzcFj1WhU9w1e4-6-nsNhBdCg7L4MSgt8SucKg/viewform?embedded=true" width="100%" height="3085">Loading…</iframe>
-                            <button
-                                className="bg-orange-500 text-white p-3 my-3 rounded-xl w-full hover:bg-orange-600"
-                                onClick={() => {
-                                    setShowFeedback(false)
-                                    navigate('/biocoding', { state: { fromHome: true, name } })
-                                }}
-                            >
-                                Continue to Certificate
-                            </button>
-                        </div>
+                    // ) : showFeedback ? (
+                    //     <div className="p-5">
+                    //         <h3 className="text-sm sm:text-xs text-center italic mb-2">
+                    //             We value your feedback! Please fill the form below.
+                    //         </h3>
+                    //         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1cob6dB56WzcFj1WhU9w1e4-6-nsNhBdCg7L4MSgt8SucKg/viewform?embedded=true" width="100%" height="3085">Loading…</iframe>
+                    //         <button
+                    //             className="bg-orange-500 text-white p-3 my-3 rounded-xl w-full hover:bg-orange-600"
+                                
+                    //         >
+                    //             Continue to Certificate
+                    //         </button>
+                    //     </div>
                     ) : (
                         <form id="certificateForm" className="p-5" onSubmit={handleSubmit} autoComplete="true" >
                             <div className="">
@@ -109,7 +106,10 @@ const Home = () => {
                             <button
                                 type="submit"
                                 disabled={!name}
-                                className="bg-orange-500 text-white p-3 my-1 rounded-xl w-full hover:bg-orange-600"
+                                className="bg-orange-500 text-white p-3 my-1 rounded-xl w-full hover:bg-orange-600" onClick={() => {
+                                    // setShowFeedback(false)
+                                    navigate('/biocoding', { state: { fromHome: true, name } })
+                                }}
                             >
                                 Generate Certificate
                             </button>
