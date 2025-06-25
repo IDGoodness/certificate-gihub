@@ -140,7 +140,7 @@ const Biocoding = () => {
                             </p>
 
                             <p className="font-bold mx-auto text-center w-[300px] uppercase border-1 border-black ">
-                            27th june 2025
+                            27th of june 2025
                             </p>
 
                             <div className="flex justify-between relative z-10 mx-10  ">
