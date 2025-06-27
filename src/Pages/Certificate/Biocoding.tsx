@@ -178,7 +178,7 @@ const Biocoding = () => {
                                     />
                                     </p>
                                     <p className="text-base font-semibold ">
-                                    Adeyemi Aderinto
+                                    Abraham Oluwaseun Aderinto
                                     </p>
                                     <p className="text-xs font-medium">
                                     Director, G-iHub.
