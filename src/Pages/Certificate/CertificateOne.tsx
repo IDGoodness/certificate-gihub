@@ -83,7 +83,7 @@ const CertificateOne = () => {
                                 {formData.name}
                             </p>
                             <p className="text-xl mt-3 " >
-                                for successfully participating in the Basic Web Development class and demonstrating commitment to learning foundational web technologies organised by Genomac Innovation Hub 
+                                for successfully participating in the Introduction to Frontend Web Development class and demonstrating commitment to learning foundational web technologies organised by Genomac Innovation Hub 
                             </p>
                             <p className="text-xl font-bold " >
                                 27th June 2025

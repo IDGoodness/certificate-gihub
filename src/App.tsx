@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/certone" element={<CertificateOne />} />
           <Route path="/biocoding" element={<Biocoding />} />
-          <Route path="/social-impact" element={<Social />} />
+          <Route path="/socialimpact" element={<Social />} />
         </Routes>
       </Router>
     </>
